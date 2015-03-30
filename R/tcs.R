@@ -1,8 +1,10 @@
 tcs <-
 function (ehat, X, block, ahat = NULL, scores = wscores, eps = 1e-04) 
 {
-    if (is.null(ahat)) 
-        ahat <- getScores(scores, ehat)
+    if (is.null(ahat)) {
+       r <- rank(e, ties.method = "first")/(length(e) + 1)
+       ahat <- getScores(scores, r)
+    }
     nvec <- tapply(ehat, block, length)
     M <- sum(choose(nvec, 2)) - ncol(X)
     myfunc1 <- function(ak) {

@@ -1,8 +1,10 @@
 tE <-
 function (ehat, X, block, ahat = NULL, scores = wscores, fs.correct = TRUE) 
 {
-    if (is.null(ahat)) 
-        ahat <- getScores(scores, ehat)
+    if (is.null(ahat)) {
+       r <- rank(e, ties.method = "first")/(length(e) + 1)
+        ahat <- getScores(scores, r)
+    }
     A <- matrix(ahat, nrow = m, byrow = TRUE)
     sphi <- cor(A)
     myfunc <- function(i, x, sk) {
