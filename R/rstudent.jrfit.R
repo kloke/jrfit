@@ -14,7 +14,7 @@ function (model,...)
 	nvec<-tapply(block,block,length)
     K <- sum(nvec * (nvec - 1)) - p
     ehat <- fit$residual
-    r <- rank(e, ties.method = "first")/(length(e) + 1)
+    r <- rank(ehat, ties.method = "first")/(length(ehat) + 1)
     a <- getScores(fit$scores, r)
     d11 <- crossprod(ehat, a)/(N - p)
     ds11 <- crossprod(ehat, sign(ehat))/(N - p)

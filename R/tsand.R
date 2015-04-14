@@ -3,7 +3,7 @@ function (ehat, x, block, a = NULL, scores = wscores, fs.correct = TRUE)
 {
     x <- as.matrix(x)
     if (is.null(a)) {
-       r <- rank(e, ties.method = "first")/(length(e) + 1)
+       r <- rank(ehat, ties.method = "first")/(length(ehat) + 1)
         a <- getScores(scores, r)
     }
     Xa <- cbind(x, a)

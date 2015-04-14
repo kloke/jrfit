@@ -1,7 +1,7 @@
 vee<-function(ehat,center,method='dhl',scores=wscores) {
 
 	disp0<-function(e,scores=wscores) {
-		r <- rank(e, ties.method = "first")/(length(e) + 1)
+		r <- rank(ehat, ties.method = "first")/(length(ehat) + 1)
 		getScores(scores, r) %*% e
 	}
 

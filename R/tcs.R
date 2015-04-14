@@ -2,7 +2,7 @@ tcs <-
 function (ehat, X, block, ahat = NULL, scores = wscores, eps = 1e-04) 
 {
     if (is.null(ahat)) {
-       r <- rank(e, ties.method = "first")/(length(e) + 1)
+       r <- rank(ehat, ties.method = "first")/(length(ehat) + 1)
        ahat <- getScores(scores, r)
     }
     nvec <- tapply(ehat, block, length)
